@@ -72,7 +72,7 @@ function copy(param) {
 }
 
 const inputElement = document.querySelector("input");
-inputElement.addEventListener("change", handleFiles, false);
+inputElement.addEventListener("change", handleFiles);
 
 //function below handles image upload
 function handleFiles() {
