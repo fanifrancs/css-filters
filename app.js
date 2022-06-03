@@ -43,24 +43,32 @@ const codes = {
     filter42: '.filter-42 {-webkit-filter: sepia(.45) contrast(1.50) brightness(0.75) saturate(1.3) hue-rotate(-5deg) invert(80%); filter: sepia(.45) contrast(1.50) brightness(0.75) saturate(1.3) hue-rotate(-5deg) invert(80%);}',
 }
 
+let a, b, c;
+a = 'Upload any picture and browse through various CSS filters applied.';
+b = "Click any of the previews to copy it's CSS code to clipboard.";
+c = "Extract the code into your image's class.";
+
 function original() {
     alert('This is the original image.');
 }
 
 function howToUse() {
-    let a, b, c;
-    a = 'Upload any picture and browse through various CSS filters applied.';
-    b = "Click any of the previews to copy it's CSS code to clipboard.";
-    c = "Extract the code into your image's class.";
     alert(`${a} ${b} ${c}`);
 }
 
 //function below copies the filter code to clipboard
 function copy(param) {
     let code = codes[param];
-    navigator.clipboard.writeText(code);
-    alert('Code copied to clipboard.');
-    console.log(code);
+    navigator.clipboard.writeText(code).then(
+        () => {
+            alert('Code copied to clipboard.');
+            console.log(code);
+        }
+    ).catch(
+        () => {
+            alert('Something went wrong.')
+        }
+    ); 
 }
 
 const inputElement = document.querySelector("input");

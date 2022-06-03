@@ -78,6 +78,7 @@ button{
     width: 200px;
     margin: 10px;
     border-radius: 5px;
+    cursor: pointer;
     background-image: url('./image.jpeg');
     background-size: cover;
     background-repeat: no-repeat;
